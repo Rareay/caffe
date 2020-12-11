@@ -1,0 +1,251 @@
+CXX src/caffe/layers/cudnn_conv_layer.cpp
+In file included from ./include/caffe/util/device_alternate.hpp:40:0,
+                 from ./include/caffe/common.hpp:19,
+                 from ./include/caffe/blob.hpp:8,
+                 from ./include/caffe/layers/cudnn_conv_layer.hpp:6,
+                 from src/caffe/layers/cudnn_conv_layer.cpp:5:
+./include/caffe/util/cudnn.hpp: In function ‘const char* cudnnGetErrorString(cudnnStatus_t)’:
+./include/caffe/util/cudnn.hpp:21:10: warning: enumeration value ‘CUDNN_STATUS_VERSION_MISMATCH’ not handled in switch [-Wswitch]
+   switch (status) {
+          ^
+src/caffe/layers/cudnn_conv_layer.cpp: In member function ‘virtual void caffe::CuDNNConvolutionLayer<Dtype>::Reshape(const std::vector<caffe::Blob<Dtype>*>&, const std::vector<caffe::Blob<Dtype>*>&)’:
+src/caffe/layers/cudnn_conv_layer.cpp:136:7: error: ‘CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT’ was not declared in this scope
+       CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
+       ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:136:7: note: suggested alternative: ‘CUDNN_CONVOLUTION_FWD_ALGO_DIRECT’
+       CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
+       ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:131:17: error: there are no arguments to ‘cudnnGetConvolutionForwardAlgorithm’ that depend on a template parameter, so a declaration of ‘cudnnGetConvolutionForwardAlgorithm’ must be available [-fpermissive]
+     CUDNN_CHECK(cudnnGetConvolutionForwardAlgorithm(handle_[0],
+                 ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:131:17: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+     CUDNN_CHECK(cudnnGetConvolutionForwardAlgorithm(handle_[0],
+                 ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:151:11: error: ‘CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT’ was not declared in this scope
+           CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
+           ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:151:11: note: suggested alternative: ‘CUDNN_CONVOLUTION_BWD_FILTER_ALGO_COUNT’
+           CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
+           ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:149:17: error: there are no arguments to ‘cudnnGetConvolutionBackwardFilterAlgorithm’ that depend on a template parameter, so a declaration of ‘cudnnGetConvolutionBackwardFilterAlgorithm’ must be available [-fpermissive]
+     CUDNN_CHECK(cudnnGetConvolutionBackwardFilterAlgorithm(handle_[0],
+                 ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:162:11: error: ‘CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT’ was not declared in this scope
+           CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
+           ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:162:11: note: suggested alternative: ‘CUDNN_CONVOLUTION_BWD_DATA_ALGO_COUNT’
+           CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
+           ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:160:17: error: there are no arguments to ‘cudnnGetConvolutionBackwardDataAlgorithm’ that depend on a template parameter, so a declaration of ‘cudnnGetConvolutionBackwardDataAlgorithm’ must be available [-fpermissive]
+     CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm(handle_[0],
+                 ^
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp: In instantiation of ‘void caffe::CuDNNConvolutionLayer<Dtype>::Reshape(const std::vector<caffe::Blob<Dtype>*>&, const std::vector<caffe::Blob<Dtype>*>&) [with Dtype = float]’:
+src/caffe/layers/cudnn_conv_layer.cpp:266:1:   required from here
+src/caffe/layers/cudnn_conv_layer.cpp:131:52: error: ‘cudnnGetConvolutionForwardAlgorithm’ was not declared in this scope
+     CUDNN_CHECK(cudnnGetConvolutionForwardAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+       bottom_descs_[i],
+       ~~~~~~~~~~~~~~~~~                             
+       filter_desc_,
+       ~~~~~~~~~~~~~                                 
+       conv_descs_[i],
+       ~~~~~~~~~~~~~~~                               
+       top_descs_[i],
+       ~~~~~~~~~~~~~~                                
+       CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       workspace_limit_bytes,
+       ~~~~~~~~~~~~~~~~~~~~~~                        
+       &fwd_algo_[i]));
+       ~~~~~~~~~~~~~~                                
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:131:52: note: suggested alternative: ‘cudnnGetConvolutionForwardAlgorithm_v7’
+     CUDNN_CHECK(cudnnGetConvolutionForwardAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+       bottom_descs_[i],
+       ~~~~~~~~~~~~~~~~~                             
+       filter_desc_,
+       ~~~~~~~~~~~~~                                 
+       conv_descs_[i],
+       ~~~~~~~~~~~~~~~                               
+       top_descs_[i],
+       ~~~~~~~~~~~~~~                                
+       CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       workspace_limit_bytes,
+       ~~~~~~~~~~~~~~~~~~~~~~                        
+       &fwd_algo_[i]));
+       ~~~~~~~~~~~~~~                                
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:149:59: error: ‘cudnnGetConvolutionBackwardFilterAlgorithm’ was not declared in this scope
+     CUDNN_CHECK(cudnnGetConvolutionBackwardFilterAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           bottom_descs_[i], top_descs_[i], conv_descs_[i], filter_desc_,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           workspace_limit_bytes, &bwd_filter_algo_[i]) );
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:149:59: note: suggested alternative: ‘cudnnGetConvolutionBackwardFilterAlgorithm_v7’
+     CUDNN_CHECK(cudnnGetConvolutionBackwardFilterAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           bottom_descs_[i], top_descs_[i], conv_descs_[i], filter_desc_,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           workspace_limit_bytes, &bwd_filter_algo_[i]) );
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:160:57: error: ‘cudnnGetConvolutionBackwardDataAlgorithm’ was not declared in this scope
+     CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           filter_desc_, top_descs_[i], conv_descs_[i], bottom_descs_[i],
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         workspace_limit_bytes, &bwd_data_algo_[i]));
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:160:57: note: suggested alternative: ‘cudnnGetConvolutionBackwardDataAlgorithm_v7’
+     CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           filter_desc_, top_descs_[i], conv_descs_[i], bottom_descs_[i],
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         workspace_limit_bytes, &bwd_data_algo_[i]));
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp: In instantiation of ‘void caffe::CuDNNConvolutionLayer<Dtype>::Reshape(const std::vector<caffe::Blob<Dtype>*>&, const std::vector<caffe::Blob<Dtype>*>&) [with Dtype = double]’:
+src/caffe/layers/cudnn_conv_layer.cpp:266:1:   required from here
+src/caffe/layers/cudnn_conv_layer.cpp:131:52: error: ‘cudnnGetConvolutionForwardAlgorithm’ was not declared in this scope
+     CUDNN_CHECK(cudnnGetConvolutionForwardAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+       bottom_descs_[i],
+       ~~~~~~~~~~~~~~~~~                             
+       filter_desc_,
+       ~~~~~~~~~~~~~                                 
+       conv_descs_[i],
+       ~~~~~~~~~~~~~~~                               
+       top_descs_[i],
+       ~~~~~~~~~~~~~~                                
+       CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       workspace_limit_bytes,
+       ~~~~~~~~~~~~~~~~~~~~~~                        
+       &fwd_algo_[i]));
+       ~~~~~~~~~~~~~~                                
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:131:52: note: suggested alternative: ‘cudnnGetConvolutionForwardAlgorithm_v7’
+     CUDNN_CHECK(cudnnGetConvolutionForwardAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+       bottom_descs_[i],
+       ~~~~~~~~~~~~~~~~~                             
+       filter_desc_,
+       ~~~~~~~~~~~~~                                 
+       conv_descs_[i],
+       ~~~~~~~~~~~~~~~                               
+       top_descs_[i],
+       ~~~~~~~~~~~~~~                                
+       CUDNN_CONVOLUTION_FWD_SPECIFY_WORKSPACE_LIMIT,
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       workspace_limit_bytes,
+       ~~~~~~~~~~~~~~~~~~~~~~                        
+       &fwd_algo_[i]));
+       ~~~~~~~~~~~~~~                                
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:149:59: error: ‘cudnnGetConvolutionBackwardFilterAlgorithm’ was not declared in this scope
+     CUDNN_CHECK(cudnnGetConvolutionBackwardFilterAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           bottom_descs_[i], top_descs_[i], conv_descs_[i], filter_desc_,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           workspace_limit_bytes, &bwd_filter_algo_[i]) );
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:149:59: note: suggested alternative: ‘cudnnGetConvolutionBackwardFilterAlgorithm_v7’
+     CUDNN_CHECK(cudnnGetConvolutionBackwardFilterAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           bottom_descs_[i], top_descs_[i], conv_descs_[i], filter_desc_,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_FILTER_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           workspace_limit_bytes, &bwd_filter_algo_[i]) );
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:160:57: error: ‘cudnnGetConvolutionBackwardDataAlgorithm’ was not declared in this scope
+     CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           filter_desc_, top_descs_[i], conv_descs_[i], bottom_descs_[i],
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         workspace_limit_bytes, &bwd_data_algo_[i]));
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
+src/caffe/layers/cudnn_conv_layer.cpp:160:57: note: suggested alternative: ‘cudnnGetConvolutionBackwardDataAlgorithm_v7’
+     CUDNN_CHECK(cudnnGetConvolutionBackwardDataAlgorithm(handle_[0],
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+           filter_desc_, top_descs_[i], conv_descs_[i], bottom_descs_[i],
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           CUDNN_CONVOLUTION_BWD_DATA_SPECIFY_WORKSPACE_LIMIT,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         workspace_limit_bytes, &bwd_data_algo_[i]));
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+./include/caffe/util/cudnn.hpp:15:28: note: in definition of macro ‘CUDNN_CHECK’
+     cudnnStatus_t status = condition; \
+                            ^~~~~~~~~
